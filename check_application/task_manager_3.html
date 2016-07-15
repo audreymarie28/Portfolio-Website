@@ -1,0 +1,514 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkr</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Khula:400,700,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="dist_3/jquery.jqplot.css" />
+	    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="favicons/manifest.json">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- BEGIN LOCAL CSS -->
+<style type="text/css">
+
+body {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	width: 100%;
+	height:100%;
+	color: #ffffff;
+	background: #262F38;
+}
+
+.button {
+	background: #B1BF5E;
+}
+
+.button:hover {
+	background: #99A551;
+}
+
+#chartdiv {
+	height:550px;
+	width:700px;
+}
+
+#homework {
+	color: #000000;
+}
+
+h2 {
+	font-family: 'Khula', sans-serif;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+h1, h3, h4, h5, h6 {
+	font-family: 'Khula', sans-serif;
+	font-weight:600;
+	color: #ffffff;
+}
+
+p {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	color: #ffffff;
+}
+
+a, a.active, a.hover {
+	color: #ffffff;
+}
+
+#homework-span {
+	color: #ffffff;
+}
+
+.box {
+	border-right: 2px solid #ffffff;
+	padding: 2rem;
+	height:100%;
+	min-height:1000px;
+	background-color: #5A6F84;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+
+
+.top-bar {
+	background-color: #c1cfdc;
+}
+
+.times {
+	color: #000000;
+}
+
+ul.tasks {
+	/*list-style-image: url('check-box.jpg');*/
+	list-style-type: none;
+}
+
+ul.tasks li {
+	padding-bottom: 20px;
+}
+
+ul.left li a:hover {
+	background: #574E6D;
+}
+
+.mobile {
+	display: none;
+}
+
+.mobile-date {
+	display:none;
+}
+
+.mobile-tasks {
+	display:none;
+}
+
+.mobile-graph {
+	display:none;
+}
+
+
+@media only screen and (max-width: 40em){
+
+	.graph {
+		padding-left: 15px;
+	}
+	/*have to refresh page to get chart to load in mobile view, not sure why, probably a jqplot issue*/
+	#chartdiv {
+		height:400px;
+		width:375px;
+	}
+	
+	.jqplot-data-label {
+		font-size: 0.75em;
+	}
+	
+	.full {
+		display: none;
+	}
+	
+	.mobile {
+		display: block;
+	}
+	
+	.box {
+		border: 1px solid #ffffff;
+		padding: 2rem;
+		border-radius: 4px;
+		min-height:100px;
+		background-color:#262F38;
+	
+	}
+	
+	.full-row {
+		display:none;
+	}
+	
+	.mobile-date {
+		display:block;
+	}
+	
+	.mobile-tasks {
+		display:block;
+	}
+	
+	.mobile-graph {
+		display:block;
+	}
+}
+
+/*Tablet*/
+@media only screen and (min-width:321px) and (max-width:1000px) {
+	.graph {
+		padding-left: 15px;
+	}
+	/*have to refresh page to get chart to load in mobile view, not sure why, probably a jqplot issue*/
+	#chartdiv {
+		height:400px;
+		width:375px;
+	}
+	
+	.jqplot-data-label {
+		font-size: 0.75em;
+	}
+	
+	.full {
+		display: none;
+	}
+	
+	.mobile {
+		display: block;
+	}
+	
+	.box {
+		border: 1px solid #ffffff;
+		padding: 2rem;
+		border-radius: 4px;
+		min-height:100px;
+		background-color:#262F38;
+	
+	}
+	
+	.full-row {
+		display:none;
+	}
+	
+	.mobile-date {
+		display:block;
+	}
+	
+	.mobile-tasks {
+		display:block;
+	}
+	
+	.mobile-graph {
+		display:block;
+	}
+
+}
+
+
+
+</style>
+<!-- END LOCAL CSS -->
+  </head>
+  <body>
+  	<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a style="color:#151333;" href="task_manager.html"><img src="images/checkr_small.svg"></a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+ <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+     <li><a style="background:#c1cfdc; color:#333333;" href="calendar.html"><img style="width:20px; height:20px;" src="images/calendar.png"> Calendar</a></li>
+      <li class="has-dropdown"><a style="background:#c1cfdc; color:#151333;" href="#"> <img style="width:20px; height:20px;" src="images/cog2.png"> Audrey</a>
+        <ul class="dropdown">
+          <li><a style="background:#c1cfdc; color:#151333;" href="#">Preferences</a></li>
+          <li><a style="background:#c1cfdc; color:#151333;" href="#">Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+  </section>
+</nav>
+<div class="row fullWidth full">
+		<div class="row" style="margin-top:0; margin-bottom: 50px; margin-left:0 position:relative;">
+			<div class="small-12 medium-4 large-4 columns" style="padding-left:0; height:100%; position:absolute;">
+				<div class="box">
+					<h3 style="text-align:center;">Tasks</h3>
+				<div class="row">
+					<div class="large-12 columns task-list">
+						<ul class="tasks">
+							<li id="task"><input class="check" id="check-1" type="checkbox"> 9:15 - 10:20 class</li>
+							<li id="task"><input class="check" id="check-2" type="checkbox"> 10:30 - 11:45 class</li>
+							<li id="task"><input class="check" id="check-3" type="checkbox"> 12:00 - 12:30 lunch</li>
+							<li id="task"><input class="check" id="check-4" type="checkbox"> 1:00 - 2:00 advising meeting</li>
+						
+					</ul>
+					</div><!--end column-->
+					</div><!--end row-->
+					<div class="row full text-center" style="small-10 columns end">
+						<a style="color:#151333;"class="button round" href="#" data-reveal-id="newTaskModal">Add Task <img style="width:15px; height:15px;" src="images/plus.png"> </a>
+					</div><!--end row-->
+			<div class="row mobile text-center" style="small-10 columns end">
+				<a style="color:#151333;" class="button round" href="#" data-reveal-id="newTaskModal"><img style="width:15px; height:15px;" src="images/plus.png"></a>
+			</div><!--end mobile row-->
+		</div> <!--end box-->
+		</div> <!--end column-->
+		<div class="small-12 medium-4 large-8 columns text-center">
+			<div class="row text-center" style="margin-top:2rem;">
+				<h2 style="text-align: center; color:#ffffff;"><a style="color:#ffffff" href='task_manager.html'><img src="images/arrow-right.svg"></a> Friday <a style="color:#F0DCC3;" href="task_manager_3.html"><img src="images/arrow-left.svg"></a><br /></h2>
+				<h1 style="text-align:center;">October 30, 2015<br /></h1>
+			</div>
+			<div class="row">
+			<div class="graph full-graph">
+				<img src="images/graph_final_3.svg" alt="">
+			<!--<div id="chartdiv"></div>-->
+			</div>
+			</div><!--end row-->
+				
+		</div><!--end columns-->
+		</div><!--end row-->
+
+</div><!--end row-->
+
+<div class="row mobile-date" style="margin-top:2rem;">
+		<h2 style="text-align: center; color:#ffffff;"><a style="color:#ffffff" href='task_manager.html'><img src="images/arrow-right.svg"></a> Friday <a style="color:#ffffff;" href="task_manager_3.html"><img src="images/arrow-left.svg"></a><br /></h2>
+		<h1 style="text-align: center;">October 30, 2015<br /></h1>
+	</div>
+	
+	<div class="row fullWidth mobile-tasks" style="margin-top:0; margin-bottom: 50px; margin-left:0">
+		<div class="small-12 medium-4 large-3 columns">
+			<div class="box">
+			<h3 style="text-align:center;">Tasks</h3>
+			<div class="row">
+				<div class="large-12 columns task-list">
+					<ul class="tasks">
+						<li id="task"><input class="check" id="check-1" type="checkbox"> 9:15 - 10:20 class</li>
+						<li id="task"><input class="check" id="check-2" type="checkbox"> 10:30 - 11:45 class</li>
+						<li id="task"><input class="check" id="check-3" type="checkbox"> 12:00 - 12:30 lunch</li>
+						<li id="task"><input class="check" id="check-4" type="checkbox"> 1:00 - 2:00 advising meeting</li>
+						
+					</ul>
+				</div><!--end column-->
+			</div><!--end row-->
+			<div class="row full text-center" style="small-10 columns end">
+						<a style="color:#151333;"class="button round" href="#" data-reveal-id="newTaskModal">Add Task <img style="width:15px; height:15px;" src="images/plus.png"> </a>
+					</div><!--end row-->
+			<div class="row mobile text-center" style="small-10 columns end">
+				<a style="color:#151333;" class="button round" href="#" data-reveal-id="newTaskModal"><img style="width:15px; height:15px;" src="images/plus.png"></a>
+			</div><!--end mobile row-->
+		</div> <!--end box-->
+		</div> <!--end column-->
+		<div class="small-12 medium-8 large-9 end columns graph mobile-graph">
+			<img src="images/graph_final_3.svg" alt="">
+			<!--<div id="chartdiv-mobile"></div>-->
+		</div>
+	</div><!--end row-->
+
+
+<div id="newTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 style="color:#000000;" id="modalTitle">Add New Task</h2>
+ <form id="new-task-modal">
+  <div class="row">
+    <div class="large-8 columns">
+        <input id="new-task-name" type="text" placeholder="New Task" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+        <input id="new-task-description" type="text" placeholder="Description" />
+    </div>
+	</div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Type
+        <select id="type">
+          <option value="homework">Homework</option>
+          <option value="class">Class</option>
+          <option value="meeting">Meeting</option>
+          <option value="meal">Meal</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <div id="homework">
+  <div class="row">
+  	<div class="large-4 columns">
+  		<br/>
+  		Date Assigned: <input id="date-assigned" type="date" />
+  		Date Due: <input id="date-due" type="date" />
+  	</div>
+  </div>
+  </div><!--end homework-->
+  <div class="row">
+  	<div class="large-4 columns times">
+  		<br />
+  		Start Time: <input id="start-time" type="text" />
+  		End Time: <input id="end-time" type="text" />
+  	</div>
+  </div>
+</form>
+
+<a id="add-new-task" class="button expand round close" href="#">Add Task</a>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+<div id="doneTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 style="color:#151333;" id="modalTitle">You finished!</h2>
+  <h5 style="color:#000000;" >Current Time:</h5><p id="time"></p>
+  <p style="color:#000000;" > You saved/wasted time!</p>
+  <a class="close button expand round" href="#">Okay</a>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+
+
+
+<!-- FOUNDATION JS CALLS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.topbar.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.equalizer.js"></script>
+    <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+	<!--<script src="dist_3/jquery.min.js"></script>-->
+	<script src="dist_3/jquery.jqplot.min.js"></script>
+	<script src="dist_3/plugins/jqplot.pieRenderer.js"></script>
+
+  <script>
+    $(document).foundation('equalizer', 'reflow');
+  </script>
+  <script>
+  $(document).foundation({
+  equalizer : {
+    // Specify if Equalizer should make elements equal height once they become stacked.
+    equalize_on_stack: true,
+    // Allow equalizer to resize hidden elements
+    act_on_hidden_el: false
+  }
+});
+  
+  </script>
+  <script>
+  
+  var num = 6;
+
+	$('#type').change(function() {
+
+var type = $(this).val();
+
+	if(type == 'homework') {
+		$('#homework').show();
+	}
+	else {
+		$('#homework').hide();
+	}
+});
+
+
+$('#add-new-task').click(function() {
+
+	var name = $('#new-task-name').val();
+	var notes = $('#new-task-description').val();
+	var startTime = $('#start-time').val();
+	var endTime = $('#end-time').val();
+	var dateAssigned = $('#date-assigned').val();
+	var dateDue = $('#date-due').val();
+	//var num++;
+	if ($('#type').val() == 'homework') {
+	
+		$('.tasks').append('<li><input class="check" type="checkbox"> <span id="homework-span" data-tooltip aria-haspopup="true" class="has-tip [tip-right]"title="' + 'Date Assigned: ' + dateAssigned + '&#13;' + 'Date Due: ' + dateDue + '&#13;' + 'Notes: ' + notes + '">' + startTime + '-' + endTime + ' ' + name + '</span></li>');
+	}
+	else {
+		$('.tasks').append('<li><input id="check" type="checkbox">' + ' ' + startTime + '-' + endTime + ' ' + name + '</li>');
+	}
+
+$('#newTaskModal').foundation('reveal', 'close');
+
+});
+
+//deal with this later, how to add new checkboxes
+/*$(document.body).click(function() {
+	$('.check').each(function() {
+        if($(this).is(":checked")) {
+            $('#doneTaskModal').foundation('reveal', 'open');
+        }
+        else {
+        }   
+    });
+    });
+      
+  $('a.close').on('click', function() {
+  $('#doneTaskModal').foundation('reveal', 'close');
+  //$('.graph').html('<img src="images/time_graph_2.jpg" alt="">');
+  $('.graph-key').html('<h6>Time saved: 3 hours</h6> <h6>Time wasted: 3 hours</h6>');
+});
+*/
+
+$(document).ready(function(){
+  plot2 = jQuery.jqplot('chartdiv', 
+    [[['Homework', 0],['Class', 2], ['Meetings', 1], 
+    ['Meals', 1],['Other', 0]]], 
+    {
+      title: '', 
+      seriesDefaults: {
+        shadow: false, 
+        renderer: jQuery.jqplot.PieRenderer, 
+        rendererOptions: { 
+          startAngle: 180, 
+          sliceMargin: 4, 
+          showDataLabels: true } 
+      }, 
+      legend: { show:true, location: 'e' }
+    }
+  );
+});
+
+$(document).ready(function(){
+  plot2 = jQuery.jqplot('chartdiv-mobile', 
+    [[['Homework', 0],['Class', 2], ['Meetings', 1], 
+    ['Meals', 1],['Other', 0]]], 
+    {
+      title: '', 
+      seriesDefaults: {
+        shadow: false, 
+        renderer: jQuery.jqplot.PieRenderer, 
+        rendererOptions: { 
+          startAngle: 180, 
+          sliceMargin: 4, 
+          showDataLabels: true } 
+      }, 
+      legend: { show:true, location: 'e' }
+    }
+  );
+});
+</script>
+
+  
+
+
+  </body>
+</html>

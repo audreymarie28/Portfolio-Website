@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkr</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Khula:400,700,300,600' rel='stylesheet' type='text/css'>
+        <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="favicons/manifest.json">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- BEGIN LOCAL CSS -->
+<style type="text/css">
+
+body {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	width: 100%;
+	height:100%;
+	color: #F0DCC3;
+	background: #262F38;
+}
+
+.button {
+	background: #B1BF5E;
+}
+
+.button:hover {
+	background: #99A551;
+}
+
+
+.box {
+	background: #ffffff;
+	border: 1px solid #999;
+	padding: 2rem;
+	border-radius: 4px;
+	margin-top: 1.5rem;
+}
+
+h2 {
+	font-family: 'Khula', sans-serif;
+	font-weight: 600;
+	color: #F0DCC3;
+}
+
+h3 {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	color: #24202D;
+}
+
+p {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	color: #000000;
+}
+
+h1, h4, h5, h6 {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	color: #F0DCC3;
+}
+
+
+a, a:active {
+	color: #B1BF5E;
+}
+
+a:hover, a:focus {
+	color: #99A551;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+
+.top-bar {
+	background-color: #c1cfdc;
+}
+
+
+@media only screen and (max-width: 40em){
+
+	footer {
+		margin-bottom: 100px;
+	}
+	#toolbar {
+		margin-top: 20px;
+		position: fixed;
+		bottom: 0!important;
+		left:0!important;
+		top: initial;
+		border-top: 1px solid #eee;
+	
+	}
+	
+	.title {
+		margin-left: 20px;
+	}
+	
+}
+
+
+</style>
+<!-- END LOCAL CSS -->
+  </head>
+  <body>
+  	<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a style="color:#151333;" href="#"><img src="images/checkr_small.svg"></a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+ <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li><a style="background:#c1cfdc; color:#151333;" href="#">Log In/Sign Up</a></li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    
+  </section>
+</nav>
+
+	<div class="row fullWidth text-center" style="background-image:url('images/laptop_on_table.jpg'); height:100%;">
+	<br /><br />
+	<img  class="title" src="images/checkr.svg">
+	<h4 style="color:#ffffff;">Productivity at your fingertips!
+	</h4><br /><br />
+	<a class="button round" href="sign_up.html">Sign up now</a>
+	<p style="color:#ffffff;">Already have an account? <a href="login.html">Login</a></p>
+	<br />
+	</div>
+
+
+
+
+<!-- FOUNDATION JS CALLS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.topbar.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.equalizer.js"></script>
+
+  <script>
+    $(document).foundation('equalizer', 'reflow');
+  </script>
+  <script>
+  $(document).foundation({
+  equalizer : {
+    // Specify if Equalizer should make elements equal height once they become stacked.
+    equalize_on_stack: true,
+    // Allow equalizer to resize hidden elements
+    act_on_hidden_el: false
+  }
+});
+  
+  </script>
+
+  </body>
+</html>

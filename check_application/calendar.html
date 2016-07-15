@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>checkr</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Khula:400,700,300,600' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="favicons/manifest.json">
+<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- BEGIN LOCAL CSS -->
+<style type="text/css">
+
+body {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	width: 100%;
+	height:100%;	
+	color: #F0DCC3;
+	background: #262F38;
+}
+
+.button {
+	background: #B1BF5E;
+}
+
+.button:hover {
+	background: #99A551;
+}
+
+
+.box {
+	border: 1px solid #999;
+	padding: 2rem;
+	border-radius: 4px;
+	margin-top: 1.5rem;
+}
+
+#calendar {
+	width: 95%;
+	height: 100%;
+}
+
+.calendar {
+	width: 100%;
+	height: 100%;
+}
+
+h2 {
+	font-family: 'Khula', sans-serif;
+	font-weight: 600;
+	color: #F0DCC3;
+}
+
+h1, h3, h4, h5, h6 {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	color: #F0DCC3;
+}
+
+p {
+	font-family: 'Khula', sans-serif;
+	font-weight:400;
+	color: #F0DCC3;
+}
+
+a, a:active {
+	color: #151333;
+}
+
+a:hover, a:focus {
+	color: #B1BF5E;
+}
+
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.top-bar {
+	background-color: #c1cfdc;
+}
+
+/*table tr.even, table tr.alt, table tr:nth-of-type(even) {
+	background-color: #151333;
+
+}
+*/
+
+
+@media only screen and (max-width: 40em){
+
+	footer {
+		margin-bottom: 100px;
+	}
+	#toolbar {
+		margin-top: 20px;
+		position: fixed;
+		bottom: 0!important;
+		left:0!important;
+		top: initial;
+		border-top: 1px solid #eee;
+	
+	}
+	
+}
+
+
+</style>
+<!-- END LOCAL CSS -->
+  </head>
+  <body>
+  	<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a style="color:#151333;" href="task_manager.html"><img src="images/checkr_small.svg"></a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+ <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+     <li><a style="background:#c1cfdc; color:#333333;" href="calendar.html"><img style="width:20px; height:20px;" src="images/calendar.png"> Calendar</a></li>
+      <li class="has-dropdown"><a style="background:#c1cfdc; color:#151333;"  href="#"><img style="width:20px; height:20px;" src="images/cog2.png"> Audrey</a>
+        <ul class="dropdown">
+          <li><a style="background:#c1cfdc; color:#151333;"  href="#">Preferences</a></li>
+          <li><a style="background:#c1cfdc; color:#151333;"  href="#">Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </section>
+</nav>
+
+	<div id="calendar" style="margin-top:2rem; margin-left:2rem;">
+		<TABLE class="calendar" BORDER=3 CELLSPACING=3 CELLPADDING=3> 
+<TR>
+<TD COLSPAN="7" ALIGN="center" style="text-align: center; font-size: 18pt;"><B><a href="#">&lt;</a> October 2015 <a href="#">&gt;</a></B></TD> 
+</TR>
+<TR> 
+<TD ALIGN="center" style="text-align:center;">Sun</TD>
+<TD ALIGN="center" style="text-align:center;">Mon</TD>
+<TD ALIGN=center style="text-align:center;">Tue</TD>
+<TD ALIGN=center style="text-align:center;">Wed</TD>
+<TD ALIGN=center style="text-align:center;">Thu</TD>
+<TD ALIGN=center style="text-align:center;">Fri</TD>
+<TD ALIGN=center style="text-align:center;">Sat</TD>
+</TR>
+<TR> 
+<TD ALIGN=center></TD>
+<TD ALIGN=center></TD>
+<TD ALIGN=center></TD>
+<TD ALIGN=center></TD>
+<TD ALIGN=center>1</TD>
+<TD ALIGN=center>2</TD>
+<TD ALIGN=center>3</TD>
+</TR>
+<TR> 
+<TD ALIGN=center>4</TD>
+<TD ALIGN=center>5</TD>
+<TD ALIGN=center>6</TD>
+<TD ALIGN=center>7</TD>
+<TD ALIGN=center>8</TD>
+<TD ALIGN=center>9</TD>
+<TD ALIGN=center>10</TD>
+</TR>
+<TR> 
+<TD ALIGN=center>11</TD>
+<TD ALIGN=center>12</TD>
+<TD ALIGN=center>13</TD>
+<TD ALIGN=center>14</TD>
+<TD ALIGN=center>15</TD>
+<TD ALIGN=center>16</TD>
+<TD ALIGN=center>17</TD>
+</TR>
+<TR> 
+<TD ALIGN=center>18</TD>
+<TD ALIGN=center>19</TD>
+<TD ALIGN=center>20</TD>
+<TD ALIGN=center>21</TD>
+<TD ALIGN=center>22</TD>
+<TD ALIGN=center>23</TD>
+<TD ALIGN=center>24</TD>
+</TR>
+<TR> 
+<TD ALIGN=center>25</TD>
+<TD ALIGN=center>26</TD>
+<TD ALIGN=center>27</TD>
+<TD ALIGN=center><a href="task_manager_2.html">28</a></TD>
+<TD ALIGN=center><a href="task_manager.html">29</a></TD>
+<TD ALIGN=center><a href="task_manager_3.html">30</a></TD>
+<TD ALIGN=center>31</TD>
+</TR>
+
+</TABLE>
+	</div>
+	
+
+
+
+
+
+
+<!-- FOUNDATION JS CALLS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.topbar.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation/foundation.equalizer.js"></script>
+
+  <script>
+    $(document).foundation('equalizer', 'reflow');
+  </script>
+  <script>
+  $(document).foundation({
+  equalizer : {
+    // Specify if Equalizer should make elements equal height once they become stacked.
+    equalize_on_stack: true,
+    // Allow equalizer to resize hidden elements
+    act_on_hidden_el: false
+  }
+});
+  
+  </script>
+
+  </body>
+</html>
+
+

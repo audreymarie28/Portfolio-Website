@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="792px" height="612px" viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+<rect fill="#262F38" width="792" height="612"/>
+<g>
+	<path fill="#83B4E1" d="M269.034,38.576C139.013,38.576,33.609,143.979,33.609,274c0,130.021,105.403,235.425,235.425,235.425V274
+		V38.576z"/>
+	<path fill="#403E6B" d="M494.241,205.225C464.818,108.758,375.127,38.576,269.034,38.576V274L494.241,205.225z"/>
+	<path fill="#6066AE" d="M494.241,205.225L269.034,274v235.424c130.021,0,235.426-105.403,235.426-235.425
+		C504.46,250.072,500.878,226.982,494.241,205.225z"/>
+</g>
+<g>
+	<rect x="532.384" y="307.705" fill="#FFFFFF" width="173.415" height="36.071"/>
+	<rect x="532.384" y="235.565" fill="#FFFFFF" width="173.415" height="34.683"/>
+	<rect x="532.384" y="162.038" fill="#FFFFFF" width="173.415" height="37.457"/>
+	<rect x="532.384" y="199.495" fill="#EAEAEA" width="173.415" height="36.071"/>
+	<rect x="532.384" y="270.248" fill="#E9E9E9" width="173.415" height="37.457"/>
+</g>
+<rect x="540.709" y="170.361" fill="#6066AE" width="30.52" height="22.198"/>
+<rect x="540.709" y="206.432" fill="#83B4E1" width="30.52" height="23.584"/>
+<rect x="540.709" y="242.502" fill="#DDE578" width="30.52" height="23.098"/>
+<rect x="540.709" y="279.779" fill="#403E6B" width="30.52" height="21.359"/>
+<rect x="540.709" y="316.328" fill="#6C4F3F" width="30.52" height="21.266"/>
+<rect x="579.244" y="175.163" fill="none" width="120.18" height="12.593"/>
+<text transform="matrix(1 0 0 1 579.2441 183.791)" font-family="'MyriadPro-Regular'" font-size="12.1529">Homework</text>
+<rect x="577.219" y="211.978" fill="none" width="114.777" height="12.49"/>
+<text transform="matrix(1 0 0 1 577.2188 220.6064)" font-family="'MyriadPro-Regular'" font-size="12.1529">Class</text>
+<rect x="576.882" y="247.366" fill="none" width="112.077" height="13.37"/>
+<text transform="matrix(1 0 0 1 576.8818 255.9941)" font-family="'MyriadPro-Regular'" font-size="12.1529">Meetings</text>
+<rect x="575.867" y="284.719" fill="none" width="113.092" height="11.478"/>
+<text transform="matrix(1 0 0 1 575.8672 293.3481)" font-family="'MyriadPro-Regular'" font-size="12.1529">Meals</text>
+<rect x="577.894" y="320.377" fill="none" width="114.103" height="13.166"/>
+<text transform="matrix(1 0 0 1 577.8936 329.0059)" font-family="'MyriadPro-Regular'" font-size="12.1529">Other</text>
+</svg>

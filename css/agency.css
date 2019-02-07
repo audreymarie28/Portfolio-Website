@@ -6,7 +6,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .text-muted {
@@ -52,7 +52,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -269,10 +269,10 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
-    text-align: center;
+    text-align: left;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/distant_mountainbw.jpg);
+    background-image: url(../img/annecy-darkwash.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -288,8 +288,8 @@ header .intro-text {
 
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
+    font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
     font-style: italic;
     line-height: 22px;
 }
@@ -297,7 +297,7 @@ header .intro-text .intro-lead-in {
 header .intro-text .intro-heading {
     margin-bottom: 15px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
@@ -311,8 +311,8 @@ header .intro-text .intro-heading {
 
     header .intro-text .intro-lead-in {
         margin-bottom: 25px;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 40px;
+        font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 32px;
         font-style: italic;
         line-height: 40px;
     }
@@ -320,7 +320,7 @@ header .intro-text .intro-heading {
     header .intro-text .intro-heading {
         margin-bottom: 25px;
         text-transform: uppercase;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 75px;
         font-weight: 700;
         line-height: 75px;
@@ -340,7 +340,7 @@ section h2.section-heading {
 section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     /*font-style: italic;*/
     font-weight: 400;
@@ -348,13 +348,17 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 100px 0;
     }
 }
 
 .service-heading {
     margin: 15px 0;
     text-transform: none;
+}
+
+#portfolio .section-heading {
+	margin-bottom:40px;
 }
 
 #portfolio .portfolio-item {
@@ -419,7 +423,7 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption p {
     margin: 0;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Playfair Display","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     font-style: italic;
 }
@@ -782,12 +786,12 @@ ul.social-buttons li a:active {
     outline: 0;
 }
 
+
 .portfolio-modal .modal-content {
     padding: 100px 0;
     min-height: 100%;
     border: 0;
     border-radius: 0;
-    text-align: center;
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -800,6 +804,11 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content p {
     margin-bottom: 30px;
+}
+
+.portfolio-modal .modal-content p.caption {
+    font-size: .75em;
+    color: #4a4a4a;
 }
 
 .portfolio-modal .modal-content p.item-intro {
@@ -817,6 +826,36 @@ ul.social-buttons li a:active {
 .portfolio-modal .modal-content img {
     margin-bottom: 30px;
 }
+
+/* Two image containers */
+.portfolio-modal .modal-content .column-1 {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.portfolio-modal .modal-content .row-1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Two image containers */
+.portfolio-modal .modal-content .column-2 {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.portfolio-modal .modal-content .row-2::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
 
 .portfolio-modal .close-modal {
     position: absolute;
